@@ -28,8 +28,8 @@ plfa_dataset.columns = new_columns
 
 dropdown_1 = dcc.Dropdown(
                 id = "dropdown-dataset",
-                options = ["PLFA peak intensities", "Biomass content and morphologies"],
-                value = "PLFA peak intensities",
+                options = ["PLFA concentrations", "Biomass content and morphologies"],
+                value = "PLFA concentrations",
                 style = {"width": "25vw", "z-index": "10", "margin-left": "0.2vw", "margin-bottom": "-3vh", "order": "2"}
             )
 
