@@ -1,0 +1,341 @@
+/* Layout */
+:root {
+    --primary: rgba(5, 8, 184, 0.1);
+    --secondary: white;
+    --highlights: #eda109;
+  }
+
+  a {
+    color: var(--secondary);
+    text-decoration: none;
+  }
+
+  .app-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  div.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner .column-header-name {
+    margin-left: unset;
+}
+
+  /* Banner */
+
+  .banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    height: 8vh;
+    background-color: white;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  }
+
+
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 5rem;
+    padding: 2rem 1rem;
+    background-color: #f8f9fa;
+    z-index: 1050;
+    transition: width 0.1s ease-in-out;
+  }
+  
+  /* when the user hovers on the sidebar, expand it */
+  .sidebar:hover {
+    width: 16rem;
+  }
+  
+  /* make sure the contents of the navlink don't wrap when navbar collapses */
+  .sidebar .nav-link {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .sidebar .nav-link.active{
+    width: 100%;
+    overflow: hidden;
+    background-color: lightgray;
+    white-space: nowrap;
+  }
+  
+  /* fix the width of the icons */
+  .sidebar .nav-link i {
+    width: 2rem;
+    color:#13070C;
+  }
+  
+  /* hide the navlink labels by default */
+  .sidebar .nav-link span {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+  }
+  
+  /* when the sidebar is hovered, reveal the labels */
+  .sidebar:hover .nav-link span {
+    visibility: visible;
+    color: black;
+    opacity: 1;
+  }
+  
+  /* container for the sidebar header. make sure the contents don't wrap when
+   * the sidebar is collapsed.
+   */
+  .sidebar-header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  /* position the header relative to the logo and hide by default */
+  .sidebar-header h2 {
+    opacity: 0;
+    margin-left: 1rem;
+    margin-bottom: 0;
+    transition: opacity 0.1s ease-in-out;
+  }
+  
+  /* reveal the header when the sidebar is toggled */
+  .sidebar:hover .sidebar-header h2 {
+    opacity: 1;
+  }
+
+  /* Navbar */
+
+  .navbar {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Brain logo */
+
+  .logo-banner {
+    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-banner h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-top: 1vh;
+    white-space: nowrap;
+    margin-left: 1.2rem;
+    color: black;
+  }
+
+  .logo-banner img {
+    display: inline;
+    width: 8rem;
+    margin-left: 1vw;
+  }
+
+  /* Title */
+
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    padding: 30px;
+  }
+
+  /* Link to documentation */
+
+  .doc-link {
+    border: 1px solid var(--secondary);
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 0 10px;
+    width: 100px;
+    text-align: center;
+  }
+
+  .doc-link:hover {
+    border: 1px solid #13070C;
+    background-color: #e3d1ff;
+    color: #13070C;
+  }
+
+  .blog-posts {
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    margin-top: 7vh;
+  }
+
+  .blog-post-1 {
+    order: 2;
+    margin-top: 3vh;
+    margin-bottom: -5vh;
+  }
+
+  .blog-post-2 {
+    order: 2;
+    margin-top: 3vh;
+    margin-bottom: -5vh;
+  }
+
+  /* Image zoom */
+
+.zoom {
+  width: 200px;
+  height: 200px;
+
+  transition: transform .2s; /* Animation */
+}
+
+.zoom:hover {
+  transform: scale(1.1); /* (120% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+/* Tabs */
+.single-tab {
+  order: 1;
+  background-color: white;
+  font-size: 22px;
+  text-align: center;
+  font-family: Arial, sans serif;
+  color: black;
+  border: 1px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.single-tab-selected {
+  background-color: #ffc228 !important;
+}
+
+.tabs-container {
+  width: 100vw;
+  height: 6vh;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+}
+
+.tabs {
+  height: 6vh;
+  width: 50vw;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  margin-left: 0;
+}
+
+  /* Main body */
+
+ .main-body {
+   height: 80vh;
+   width: 95vw;
+   margin: auto;
+   margin-top: 3.5vh;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+   border-radius: 10px;
+   background-color: white;
+ }
+
+ /* Graphs */
+ .timeseries-plot {
+  order: 1;
+  width: 45vw;
+  height: 45vh;
+  background-color: white;
+  border-radius: 5px;
+  margin-left: 2.5vw;
+
+}
+
+ /* Graphs */
+ .hasname-plot {
+  order: 2;
+  width: 45vw;
+  height: 45vh;
+  background-color: white;
+  border-radius: 5px;
+  margin-left: 2.5vw;
+
+}
+
+.weekday-plot {
+  order: 3;
+  width: 45vw;
+  height: 35vh;
+  border-radius: 5px;
+  margin-left: 2.5vw;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.sterilized-plot {
+  order: 2;
+  width: 50vw;
+  height: 35vh;
+  border-radius: 5px;
+  margin: auto;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mapbox {
+  width: 25%;
+  height: 50vh;
+  background-color: white;
+  border-radius: 5px;
+  margin: auto;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+  /* Footer */
+
+  footer {
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(72, 40, 120, 0.8);
+    color: white;
+    font-size: 1rem;
+  }
+
+  footer p {
+    padding: 10px;
+    margin: 5px 0px;
+  }
+
+  footer p:first-child {
+    border-right: 2px solid white;
+  }
+
+  footer a {
+    text-decoration: underline;
+    color: white;
+  }
+
+  /* Default welcome section */
+
+  /* h2 {
+    font-size: 2rem;
+  } */
