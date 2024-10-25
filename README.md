@@ -18,4 +18,5 @@ Then in your terminal navigate to your cloned repo and type in the following com
 
 This will laucnh the app on port `http://127.0.0.1:8050/`.
 
-The app will be later deployed on Heroku.
+The app was also deployed on Heroku at his link: https://sample-visualizer-0b160b5cd0be.herokuapp.com/
+
